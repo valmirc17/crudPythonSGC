@@ -44,6 +44,11 @@ fonte = ("Arial", 12)
 tela = Frame(janela)
 tela.pack(expand=True, padx=20, pady=20)
 
+
+# Importação de ícones
+ft_login = PhotoImage(file=r"icones\login.png")
+ft_sair = PhotoImage(file=r"icones\sair.png")
+
 # Componentes da tela
 lbl_usuario = Label(tela, text='Usuario:', font=fonte)
 lbl_usuario.grid(row=0, column=0)
@@ -56,9 +61,9 @@ txt_senha = Entry(tela)
 txt_senha.grid(row=1, column=1, pady=5)
 
 # Botões
-btn_entrar = Button(tela, text='Entrar', font=fonte, command=click_botao)
+btn_entrar = Button(tela, text='Entrar', font=fonte, command=click_botao,image = ft_login, compound = LEFT)
 btn_entrar.grid(row=2, column=0, pady=5, padx=5)
-btn_sair = Button(tela, text='Sair', font=fonte, command=Sair)
+btn_sair = Button(tela, text='Sair', font=fonte, command=Sair,image = ft_sair, compound = LEFT)
 btn_sair.grid(row=2, column=1, pady=5, padx=5)
 
 tela.mainloop()
