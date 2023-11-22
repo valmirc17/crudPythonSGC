@@ -16,7 +16,7 @@ def validar_acesso(usuario, senha) :
         messagebox.showerror("Erro de login","Usuário ou senha incorretos.")
 def abrir_app() :
     tela.destroy()
-    subprocess.run(["python","AulaCrud.py"])
+    subprocess.run(["python","homeSGC.py"])
 
 def click_botao():
     usuario = txt_usuario.get()

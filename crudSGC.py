@@ -58,7 +58,7 @@ def Consultar() :
         txt_cor.insert(END, f"{resultado['cor']}\n")
         
     else :
-        lbl_resultado.config(text="Nenhum resultado enontrado!")
+        lbl_resultado.config(text="Nenhum resultado encontrado!")
 
 
 # Configuração da janela

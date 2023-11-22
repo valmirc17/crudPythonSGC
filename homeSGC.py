@@ -3,6 +3,16 @@
 # Importações
 from tkinter import *
 import tkinter as tk
+import subprocess
+
+# Funções
+
+def abrir_crud() :
+    subprocess.run(["python","crudSGC.py"])
+
+def lougout() :
+    tela.destroy()
+    subprocess.run(["python","loginSGC.py"])
 
 # Configuração da janela
 janela = Tk()
@@ -26,14 +36,11 @@ tela = Frame(janela)
 tela.pack(expand=True, padx=20, pady=20)
 
 # Importação de ícones
-ft_salvar = PhotoImage(file=r"icones\salvar.png")
-ft_alterar = PhotoImage(file=r"icones\alterar.png")
-ft_excluir = PhotoImage(file=r"icones\excluir.png")
-ft_procurar = PhotoImage(file=r"icones\procurar.png")
-ft_sair = PhotoImage(file=r"icones\sair.png")
+ft_celular = PhotoImage(file=r"icones\celular.png")
+ft_logout = PhotoImage(file=r"icones\logout.png")
 
 menu = Menu(tela)
-janela.config(menu=menu)
+
 
 op_menu_arquivos = Menu(menu)
 op_menu_sobre = Menu(menu)
@@ -47,5 +54,16 @@ op_menu_arquivos.add_command(label="Salvar")
 op_menu_arquivos.add_command(label="Salvar como")
 op_menu_arquivos.add_separator
 op_menu_arquivos.add_command(label="Sair",command=tela.quit)
+
+# Menu Sobre
+op_menu_sobre.add_command(label="Sobre")
+
+janela.config(menu=menu)
+# Componentes da tela
+
+btn_salvar = Button(tela, text='Controle de Celulares', font=fonte,command=abrir_crud, image=ft_celular, compound= TOP, width=150, height=150)
+btn_salvar.grid(row=7, column=0, pady=5, padx=5)
+btn_salvar = Button(tela, text='Logout', font=fonte,command=lougout, image=ft_logout, compound= TOP, width=150, height=150)
+btn_salvar.grid(row=7, column=1, pady=5, padx=5)
 
 tela.mainloop()
